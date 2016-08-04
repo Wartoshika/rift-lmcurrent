@@ -1,0 +1,24 @@
+Identifier = "LmCurrent"
+Name = "LooM Current"
+Description = "Ein Tool zur einfachen Positionsbestimmung"
+Author = "Wartoshika@Brutwacht"
+Email = "oliverwarrings@freenet.de"
+Version = "0.1"
+Environment = "3.7"
+
+SavedVariables = {
+  LmCurrentGlobal = 'character'
+}
+
+Embed = {
+	["vendor/lmutils"] = true
+}
+
+Dependencies = {
+  LmUtils = {"required", "before"}
+}
+
+RunOnStartup = {
+  "global.lua",
+  "main.lua"
+}
