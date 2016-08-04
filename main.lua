@@ -4,17 +4,6 @@ local addon = ...
 -- main init funktion nach addon load
 local function init()
 
-    -- variablen laden
-    if LmCurrentGlobal then
-
-        -- variablen laden wenn definiert
-        for k,v in pairs(LmCurrentGlobal) do
-
-            -- einzelnd updaten
-            LmCurrent.Options[k] = v;
-        end
-    end
-
     -- event registrieren wenn sich der spieler bewegt
     Command.Event.Attach(Event.Unit.Detail.Coord, LmCurrent.Engine.coordChangeEvent, "LmCurrent.Engine.coordChangeEvent")
     Command.Event.Attach(Event.Unit.Availability.Full, LmCurrent.Engine.detectShardChange, "LmCurrent.Engine.detectShardChange")
@@ -44,14 +33,5 @@ local function waitForRiftCharacterSystem()
     end
 end
 
--- speichert die gesetzten optionen
-local function saveOptionVariables()
-
-    -- ueberschreiben
-    LmCurrentGlobal = LmCurrent.Options
-end
-
 -- event registrieren
 Command.Event.Attach(Event.System.Update.End, waitForRiftCharacterSystem, "waitForRiftCharacterSystem")
-Command.Event.Attach(Event.Addon.Shutdown.Begin, saveOptionVariables, "saveOptionVariables")
-

@@ -6,8 +6,5 @@ LmCurrent = {
         previousLocation = nil,
         currentLocation =  nil,
         currentShard = nil
-    },
-    Options = {
-
     }
 }
