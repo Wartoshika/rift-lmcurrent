@@ -3,7 +3,7 @@ Name = "LooM Current"
 Description = "Ein Tool zur einfachen Positionsbestimmung"
 Author = "Wartoshika@Brutwacht"
 Email = "oliverwarrings@freenet.de"
-Version = "0.1"
+Version = "0.9 beta"
 Environment = "3.7"
 
 SavedVariables = {
@@ -20,5 +20,7 @@ Dependencies = {
 
 RunOnStartup = {
   "global.lua",
+  "ui.lua",
+  "engine.lua",
   "main.lua"
 }
